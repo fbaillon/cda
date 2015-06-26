@@ -1,0 +1,37 @@
+{% extends 'CDACertifBundle::layout.html.twig' %}
+
+{% block title %}
+  Accueil
+{% endblock%}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cdacertif/css/works.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/cdacertif/css/thumbs.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<div class="wrapper_title_section">
+	<h1 class="title">{{ title }}</h1>
+
+	<!-- Sub menu dropdown -->
+  <div class="dropDownContainer">
+	  <div class="ddArrow"></div>
+	  <div class="ddDisplay_body">Classement</div>
+    <div class="ddBox hidden">
+    	<ul>
+      <li class="first "><a href="{{ url('homepage', {'rating': 'V'}) }}">Vues</a></li>
+	    <li class="selected"><a href="{{ url('homepage', {'rating': 'R'}) }}">Classement</a></li>
+	    <li class="last "><a href="{{ url('homepage', {'rating': 'D'}) }}">Date</a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div style="height: 30px;"></div>
+	<!-- /Sub menu dropdown -->
+</div>
+
+<div id="content">
+{% include 'CDACertifBundle:Work:artistWorks.html.twig' with {'works':works} %}
+</div>
+
+{% endblock%}

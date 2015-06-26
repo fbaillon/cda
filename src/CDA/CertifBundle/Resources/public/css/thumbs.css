@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+#content .work_list {
+  display:block;
+  width: 980px;
+}
+  .ie7 #content .work_list { width:auto!important; }
+
+  #content .work_list h1 { margin:0px 0 10px 0px; }
+
+    #content .work_list h1.title {
+      font-weight: bold;
+      float:left;
+    }
+  
+  #content .work_list ul {
+    display:block;
+    list-style-type:none;
+  }
+
+    #content .work_list ul li.work_box {
+      border: 1px solid #272727;
+      display: inline-block;
+      height: 256px;
+      margin: 0 4px 10px;
+      overflow: hidden;
+      width: 184px;
+      background: none repeat scroll 0 0 #999999;
+    }
+      #content #fix .work_list ul li.work_box { margin:0 15px 18px 15px!important;}
+
+    .wrapping-work-box {
+      margin:11px 10px;
+    }
+
+  .ie7 #pagination ul,
+  .ie6 #pagination ul { display: inline; }
+  .ie7 #content .work_list ul li.work_box { zoom: 1; display: inline; }
+  .ie6 #content .work_list ul li.work_box { zoom: 1; display:inline; }
+
+  #content .work_list ul li.work_box img {
+    border:1px solid #555;
+    width:160px;
+    height:122px;
+  }
+    #content .work_list ul li.work_box a img:hover { border:1px solid #F0B000;}
+
+  #content .work_list ul li.work_box a.work_title {
+    margin:5px 0;
+    width:160px; height:40px;
+    overflow:hidden;
+    text-decoration:none;
+    font-size:0.95em;
+    color:#000;
+    display:block;
+    line-height: 20px;
+  }
+    #content .work_list ul li.work_box a.work_title:hover { color:#333;}
+
+    .ie8 #content .work_list ul li.work_box a.work_title { height: 39px; }
+
+  #content .work_list ul li.work_box .information {
+    position:relative;
+    border-top:1px solid #272727;
+  }
+
+    #content .work_list ul li.work_box .information .rating,
+    #content .work_list ul li.work_box .information .views {
+      display:block;
+      display:inline-block;
+      text-align:center;
+      padding-top: 9px;
+      line-height:21px;
+      color:#000;
+      font-size: 0.8em;
+    }
+      .ie7 #content .work_list ul li.work_box .information .rating,
+      .ie7 #content .work_list ul li.work_box .information .views { display: block; float:left; }
+
+      #content .work_list ul li.work_box .information .rating span,
+      #content .work_list ul li.work_box .information .views span {
+        display:block;
+        text-transform: uppercase;
+        font-size:0.89em;
+        color:#333;
+      }
+
+      #content .work_list ul li.work_box .information .rating {
+        width:44px;
+      }
+
+      #content .work_list ul li.work_box .information .views {
+        border-right:1px solid #272727;
+        border-left:1px solid #272727;
+        width:68px;
+        height:49px;
+      }

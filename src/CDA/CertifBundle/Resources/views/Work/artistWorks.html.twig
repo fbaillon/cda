@@ -1,0 +1,22 @@
+<div class="work_list">
+<ul>
+{% for work in works %}
+	{% for picture in work.pictures %}
+		<li class="work_box">
+	  <div class="wrapping-work-box">
+	  	<a href="{{ url('work_show', {'slug': work.slug}) }}">
+	  	<img alt="{{ work.summary }}" src="{{ picture.path | apply_filter('my_thumb') }}">
+	    </a>
+	    <a class="work_title" href="{{ url('work_show', {'slug': work.slug}) }}">{{ work.title }}</a>
+	  </div>
+		<div class="information">
+			<div class="views">86,952 <span>vues</span></div>
+			<div class="rating  up">94% <span>rating</span></div>
+		</div>
+		</li>
+	{% endfor %}
+{% else %}
+    <li>Aucune oeuvre trouvée.</li>
+{% endfor %}
+</ul>
+</div>

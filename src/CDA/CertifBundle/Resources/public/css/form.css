@@ -1,0 +1,255 @@
+@CHARSET "UTF-8";
+
+.staticForm .form_row {
+  position:relative;
+  padding:5px 0;
+  font-size:.95em;
+}
+.staticForm .form_row label {
+  float:left;
+  width:150px;
+  text-align:left;
+}
+.staticForm .form_row {
+}
+#registration_terms_of_service {
+  float: left;
+  margin: 3px 7px 0 132px;
+  position: relative;
+}
+
+.ie6 #registration_terms_of_service { margin: -3px 0px 0 135px; }
+
+.ie7 #registration_terms_of_service { margin: 0 7px 0 0!important; }
+
+ul.user-error-message { float:none!important; }
+ul.user-error-message li { float:none!important; }
+
+#user_registration_form .form_row ul li {
+  color: #FF6D7E;
+  font-weight: bold;
+  list-style: none outside none;
+  margin: 10px 30px 0 131px;
+}
+
+.signupForm .form_row #registration_gender ul li { margin: 10px 30px 0 1px!important; }
+
+.ie7 .signupForm .form_row #registration_gender ul li { margin: 0px 30px 0 1px!important; }
+
+.ie6 .signupForm .form_row #registration_gender ul li { margin: 0px 0px 0 140px!important; }
+
+/* Feedback Form */
+.feedbackForm { margin-left:40px; }
+
+.feedbackForm input { width:210px; height:18px; }
+.feedbackForm textarea {width:498px; height:128px;}
+
+.feedbackForm .submit {
+  margin-left:80px;
+  width:100px; height:26px;
+  font-weight:bold;
+}
+
+.contactForm .submit {
+  margin-left:135px;
+  width:100px; height:26px;
+  font-weight:bold;
+}
+
+#bd div h1 { margin-bottom: 15px; }
+
+.loginForm {
+  margin:0 0 40px 40px;
+}
+.error {
+  border: 1px solid #FF6D7E;
+  padding: 10px 0 10px 20px;
+  margin-left:-20px;
+}
+.loginForm input {
+  width:160px;
+  height:18px;
+  border: 1px solid #AAA;
+}
+.loginForm .submit {
+  margin:10px 0 0 80px;
+  width:75px; height:30px;
+  border:none;
+  background:url(../images/sprite-buttons.png) no-repeat 0 -35px;
+  overflow:hidden;
+}
+
+.loginForm .forgotPassword {
+  margin:10px 0 0 80px;
+  width:80px; height:30px;
+  border:none;
+  background:url(../images/sprite-buttons.png) no-repeat 0 -65px;
+  overflow:hidden;
+}
+
+.signupForm,
+.contactForm {
+  margin:30px 0 40px 20px;
+}
+.signupForm div#registration_gender * {
+  float:left;
+  margin-right:5px;
+}
+
+.signupForm .form_row label,
+.contactForm .form_row label {
+  margin-right:10px;
+  width:125px;
+  text-align:right;
+}
+.signupForm input[type=text],
+.signupForm input[type=email],
+.signupForm input[type=password] {
+  outline:1px solid #FF6D7E;
+  width:153px;
+}
+.contactForm input[type=text],
+.contactForm input[type=email] { width:153px; }
+
+.signupForm input[type=radio] { margin-bottom: 10px; }
+
+.signupForm div#registration_gender label {
+  width:50px;
+  text-align:left;
+}
+.signupForm .submit {
+  float:left;
+  margin:10px 0 0 131px;
+  width:179px;  height:35px;
+  border:none;
+  background:url(../images/sprite-buttons.png) no-repeat 0 0;
+  overflow:hidden;
+}
+.signupForm p.member {
+  margin:20px 0 0 80px;
+}
+.signupForm .form_row ul { clear:both; }
+
+.signupForm p {
+  margin:10px 30px 0 135px;
+  list-style:none;
+  color: #FF6D7E;
+  font-weight: bold;
+}
+
+.contactForm textarea {
+  width:493px; max-width:693px; min-width:293px;
+  height:130px; max-height:130px; min-height:50px;
+}
+
+.contactForm .contact_error {
+  color:#FF6D7E;
+  margin: 5px 0 5px 135px;
+}
+.contactForm .contact_errorField { outline:1px solid #FF6D7E; }
+
+.uploadForm {
+  margin:0;
+  position:relative;
+  z-index:0;
+}
+.ie7 .uploadForm { position:static!important; }
+
+.uploadForm .field_helper {
+  font-size:11px;
+  font-style:italic;
+  top:5px;
+}
+.uploadForm #help_upload_tags { position:relative; left:130px;  }
+
+.uploadForm #content-box,
+.uploadForm .black-box {
+  width:828px;
+  border: 1px solid #272727;
+  background-color: #171717;
+  padding: 10px 20px;
+}
+.uploadForm .form_row label {
+  margin-left:50px;
+}
+.uploadForm input {
+  width:300px;  height:18px;
+}
+.uploadForm input[type=file] {
+  width:300px;  height:25px;
+}
+.uploadForm textarea {
+  width:302px!important;
+  height:118px!important;
+}
+.uploadForm .submit {
+  margin-left:10px;
+  width:120px;  height:32px;
+  font-weight:bold;
+}
+.uploadForm .white-box p {
+  margin-left:50px;
+  font-size:1.1em;
+  font-weight:bold;
+}
+
+.uploadForm #content-box #upload_Type { width:150px; }
+
+.uploadForm ul li {
+  color:red;
+  list-style: none;
+  position:relative; left:130px; top:5px;
+}
+
+.changePasswordForm { margin:30px 0 40px 10px; }
+
+.changePasswordForm label {
+  width: 180px!important;
+  text-align: right!important;
+  padding-right:10px;
+}
+
+.changePasswordForm input[type=password] {
+  border: 1px solid #FF6D7E;
+  height: 18px;
+  width: 160px;
+}
+
+.changePasswordForm p {
+  font-size: 0.95em;
+  color:#ccc;
+  margin-bottom: 5px!important;
+}
+
+.changePasswordForm .contact_error {
+  color:#FF6D7E;
+  position:relative; left: 190px; top:6px;
+  width:450px;
+}
+
+.changePasswordForm .submit {
+  text-indent: -999px;
+  margin:0px 0 0 190px;
+  width:80px; height:30px;
+  border:none;
+  background:url(../images/sprite-buttons.png?v=1.62) no-repeat 0 -65px;
+  overflow:hidden;
+}
+
+.ie7 .changePasswordForm .submit {
+  border: none;
+  overflow: hidden;
+  text-indent: -999px;
+  font-size: 0;
+  display:block;
+  line-height: 0;
+}
+
+.changePasswordForm a {
+  color:#FF6D7E;
+  text-decoration: none;
+  font-size: 0.8em;
+  display:block;
+  width:110px;
+}
+

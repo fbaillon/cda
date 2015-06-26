@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+	Test
+{% endblock%}
+
+{% block body %}
+Bienvenue sur Certificat d'authenticité ! </br>
+</br>
+<h1>{{ work.title }}</h1>
+<p>{{ work.description }}</p>
+<h3>Commentaires</h3>
+<ul>
+{% for comment in work.comments %}
+    <li>
+			<h4>Commentaire du {{ comment.createdAt|date('d/m/Y') }}</h4>
+			<p>{{ comment.description }}</p>    	
+    </li>
+{% else %}
+    <li>Pas de commentaire</li>
+{% endfor %}
+</ul>
+{% endblock%}

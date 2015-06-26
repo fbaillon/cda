@@ -1,0 +1,38 @@
+{% extends "CDAUserBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cdacertif/css/form.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block fos_user_content %}
+<div id="content-box" class="staticLayout"  style="height:300px;">
+	<h1>Login</h1>
+	{% if error %}
+	    <div>{{ error|trans({}, 'CDAUserBundle') }}</div>
+	{% endif %}
+	<div class="leftCol">
+	<form action="{{ path("fos_user_security_check") }}" method="post"  class="staticForm loginForm">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		<div class="">
+			<div style="margin-bottom:12px;"></div>
+			<div class="form_row">
+				<label for="username" class=" required">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+				<input type="text" id="username" name="_username" required="required" value="{{ last_username }}" />
+			</div>
+			<div class="form_row">
+				<label for="password" class=" required">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+				<input type="password" id="password" name="_password" required="required" />
+			</div>
+			<div class="form_row">
+				<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    		<label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+			</div>
+		</div>
+		<input type="submit" class="submit" name="_submit" value="" />
+	</form>
+
+	<p>Don't have an account? <a class="mainpink"  href="{{ path("fos_user_registration_register") }}">Create one</a>.</p>
+	</div>
+</div>
+{% endblock fos_user_content %}

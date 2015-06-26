@@ -1,0 +1,54 @@
+{% extends 'CDACertifBundle::layout.html.twig' %}
+
+{% block title %}
+	{% if work.id %}{{ 'Edit work'|trans }}{% else %}{{ 'Add work'|trans }}{% endif %} 
+{% endblock%}
+
+{% block body %}
+<form action="{% if work.id %}{{ path('work_edit', {'workId':work.id}) }}{% else %}{{ path('work_add') }}{% endif %}" method="post" {{ form_enctype(form) }} novalidate="novalidate" class="work-entry">
+    <h1>{% if work.id %}{{ 'Edit work'|trans }}{% else %}{{ 'Add work'|trans }}{% endif %}</h1>
+    <div>
+    {{ form_errors(form.title) }}
+    {{ form_label(form.title, 'Title'|trans) }}
+    {{ form_widget(form.title) }}
+    </div>
+    <div>
+    {{ form_errors(form.summary) }}
+    {{ form_label(form.summary, 'Summary'|trans) }}
+    {{ form_widget(form.summary) }}
+    </div>
+    <div>
+    {{ form_errors(form.description) }}
+    {{ form_label(form.description, 'Description'|trans) }}
+    {{ form_widget(form.description) }}
+    </div>
+    <div>
+    {{ form_errors(form.length) }}
+    {{ form_label(form.length, 'Length'|trans) }}
+    {{ form_widget(form.length) }}
+    </div>
+    <div>
+    {{ form_errors(form.height) }}
+    {{ form_label(form.height, 'Height'|trans) }}
+    {{ form_widget(form.height) }}
+    </div>
+
+    <div>
+    	<ul class="pictures" data-prototype="{{ form_widget(form.pictures.vars.prototype)|e }}">
+    	</ul>
+		</div>
+
+{#
+		{{ form_row(form.pictures) }}	
+#}		
+		{{ form_rest(form) }}
+		
+    <input type="submit" id="submit" value="{% if work.id %}{{ 'Update'|trans }}{% else %}{{ 'Add'|trans }}{% endif %}" name="submit" />
+</form>
+<a href="{{ path("homepage") }}">Retour à l'accueil</a>
+{% endblock%}
+
+{% block javascripts %}
+{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/cdacertif/js/cda_work.js') }}"></script>
+{% endblock%}

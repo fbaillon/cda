@@ -1,0 +1,180 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "{\n    \"name\": \"symfony/framework-standard-edition\",\n    \"license\": \"MIT\",\n    \"type\": \"project\",\n    \"description\": \"The \\\"Symfony Standard Edition\\\" distribution\",\n    \"autoload\": {\n        \"psr-0\": { \"\": \"src/\", \"SymfonyStandard\": \"app/\" }\n    },\n    \"require\": {\n        \"php\": \">=5.3.9\",\n        \"symfony/symfony\": \"2.5.*\",\n        \"doctrine/orm\": \"~2.2,>=2.2.3\",\n        \"doctrine/doctrine-bundle\": \"~1.2\",\n        \"doctrine/doctrine-fixtures-bundle\": \"dev-master\",\n        \"twig/extensions\": \"~1.0\",\n        \"symfony/assetic-bundle\": \"~2.3\",\n        \"symfony/swiftmailer-bundle\": \"~2.3\",\n        \"symfony/monolog-bundle\": \"~2.4\",\n        \"sensio/distribution-bundle\": \"~3.0\",\n        \"sensio/framework-extra-bundle\": \"~3.0\",\n        \"incenteev/composer-parameter-handler\": \"~2.0\",\n        \"friendsofsymfony/user-bundle\": \"~2.0@dev\",\n        \"gedmo/doctrine-extensions\": \"dev-master\",\n        \"avalanche123/imagine-bundle\": \"dev-master\"        \n    },\n    \"require-dev\": {\n        \"sensio/generator-bundle\": \"~2.3\"\n    },\n    \"scripts\": {\n        \"post-root-package-install\": [\n            \"SymfonyStandard\\\\Composer::hookRootPackageInstall\"\n        ],\n        \"post-install-cmd\": [\n            \"Incenteev\\\\ParameterHandler\\\\ScriptHandler::buildParameters\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::buildBootstrap\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::clearCache\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::installAssets\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::installRequirementsFile\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::removeSymfonyStandardFiles\"\n        ],\n        \"post-update-cmd\": [\n            \"Incenteev\\\\ParameterHandler\\\\ScriptHandler::buildParameters\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::buildBootstrap\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::clearCache\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::installAssets\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::installRequirementsFile\",\n            \"Sensio\\\\Bundle\\\\DistributionBundle\\\\Composer\\\\ScriptHandler::removeSymfonyStandardFiles\"\n        ]\n    },\n    \"config\": {\n        \"bin-dir\": \"bin\"\n    },\n    \"extra\": {\n        \"symfony-app-dir\": \"app\",\n        \"symfony-web-dir\": \"web\",\n        \"incenteev-parameters\": {\n            \"file\": \"app/config/parameters.yml\"\n        },\n        \"branch-alias\": {\n            \"dev-master\": \"2.5-dev\"\n        }\n    }\n}\n",
+			"file": "composer.json",
+			"file_size": 2639,
+			"file_write_time": 1409143529000000,
+			"settings":
+			{
+				"buffer_size": 2639,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/fba/webs/cda/src/CDA/CertifBundle/Controller/DefaultController.php",
+		"/home/fba/webs/cda/src/CDA/CertifBundle/Manager/WorkManager.php",
+		"/home/fba/webs/cda/src/CDA/CertifBundle/Repository/WorkRepository.php",
+		"/home/fba/webs/cda/app/Resources/views/base.html.twig",
+		"/home/fba/webs/cda/app/config/routing.yml",
+		"/home/fba/webs/cda/app/config/config.yml",
+		"/home/fba/webs/nodejs/test/server.js",
+		"/home/fba/webs/nodejs/test/test.js",
+		"/home/fba/webs/cda/src/CDA/CertifBundle/Controller/ArtistController.php"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "composer.json",
+					"settings":
+					{
+						"buffer_size": 2639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 288.0,
+	"status_bar_visible": true
+}

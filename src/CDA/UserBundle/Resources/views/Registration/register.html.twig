@@ -1,0 +1,51 @@
+{% extends "CDAUserBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cdacertif/css/form.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block fos_user_content %}
+<div id="content-box" class="staticLayout">
+	<div class="leftCol">
+		<h3>Why register? If you are a registered member you can:</h3>
+
+		<ul class="star" style="margin:15px 0;">
+			<li><span></span>Download and watch your favorite works whenever you want</li>
+			<li><span></span>Upload work's pictures and share them with our community</li>
+			<li><span></span>Add personal comments and vote on any works and pictures</li>
+			<li><span></span>Create your "Personal Favorites" works collection</li>
+		</ul>
+
+	<div class="leftCol">
+	<form action="{{ path("fos_user_registration_register") }}" method="post"  class="staticForm signupForm" id="user_registration_form">
+		<div class="">
+			<div class="form_row">
+				{{ form_label(form.username) }}
+    		{{ form_errors(form.username) }}
+    		{{ form_widget(form.username) }}
+			</div>
+			<div class="form_row">
+				{{ form_label(form.email) }}
+    		{{ form_errors(form.email) }}
+    		{{ form_widget(form.email) }}
+			</div>
+			<div class="form_row">
+    		{{ form_errors(form.plainPassword) }}
+    		{{ form_widget(form.plainPassword) }}
+			</div>
+			{{ form_rest(form) }}
+		</div>
+		<div class="form_row">
+			<label for="registration_terms_of_service"></label>
+			<input type="checkbox" id="registration_terms_of_service" name="registration[terms_of_service]" value="1" /> I agree to the <a href="{{ path("terms_of_service") }}">Terms of Service</a>. 
+		</div>
+		<div>
+			<input type="submit" class="submit" name="_submit" value="" />
+		</div>
+	</form>
+
+	<p class="member" style="margin:20px 0;">Already a member? <a class="mainpink"  href="{{ path("fos_user_security_login") }}">Login here</a>.</p>
+	</div>
+</div>
+{% endblock %}

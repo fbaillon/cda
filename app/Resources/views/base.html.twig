@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if lt IE 7 ]> <html class="ie6 language-en" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 language-en" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 language-en" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="language-fr" xml:lang="fr" lang="fr">  <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	<link rel="alternate" type="application/rss+xml" title="CertificatdAuthenticite - RSS Feed" href="{{ url('_rss') }}" />
+	<link rel="alternate" type="text/html" media="handheld" href="{{ url('_mobile') }}" title="Mobile/PDA" />
+	<link rel="canonical" href="{{ url('homepage') }}" />
+	
+	<meta name="keywords" content="dessin, artiste, certificat, authenticité, flashcode, QRCode" />
+	<meta name="description" content="" />
+			
+	<title>{% block title %}{% endblock %} - certificatdauthenticite.fr</title>
+		
+  {% block stylesheets %}
+			<link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+      <link href="{{ asset('css/common.css') }}" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 7]>
+		<link rel="stylesheet" href="http://www.certificatdauthenticite.fr/css/ie.css" type="text/css" />
+	<![endif]-->
+	{% endblock %}
+	
+</head>
+
+<body class="white">
+<header id="header">
+	<div id="wrapping">
+		<div class="heading">
+		<p id="logo">
+			<a href="{{ url('homepage') }}">
+				<img src="{{ asset('images/cda_logo_fr.png') }}" alt="Certificat d'authenticité" width="75" height="75" />
+			</a>
+		</p>
+		
+		<!-- Search Form -->
+		<form id="mainSearch" class="search" action="">
+			<ul>
+				<li><input type="text" name="query" id="query" autofocus="autofocus" value="" ></li>
+				<li><input type="submit" value="Rechercher"></li>
+			</ul>
+		</form>
+		<!-- /Search Form -->
+
+		<!-- Login menu + language dropdown -->
+		<nav class="top">
+			<ul class="menu">
+				<li id="lang">
+					<div class="ddArrow"></div><div class="ddDisplay">FR </div>
+					<div class="ddBox hidden">
+						<ul>
+							<li class="" data-lang="en"><a href="">EN</a></li>
+							<li class="selected" data-lang="fr"><a href="">FR</a></li>
+							<li class="" data-lang="es"><a href="">ES</a></li>
+							<li class="" data-lang="it"><a href="">IT</a></li>
+							<li class="" data-lang="nl"><a href="">NL</a></li>
+							<li class="" data-lang="de"><a href="">DE</a></li>
+							<li class=" last" data-lang="tr"><a href="">TR</a></li>
+						</ul>
+					</div>
+				</li>
+  	  {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+				<li class="log">{{ app.user.username }}</li>
+				<li class="log"><a href="" rel="nofollow">Favoris</a></li>
+  	  	<li class="log"><a href="{{ path('fos_user_security_logout') }}" rel="nofollow" style="border-left: 1px solid #9FA0A2;">Déconnexion</a></li>
+			{% else %}
+				<li class="no-log"><a href="{{ path('fos_user_security_login') }}" rel="nofollow" style="border-left: 1px solid #9FA0A2;">Connexion</a></li>
+				<li class="no-log"><a href="{{ path('fos_user_registration_register') }}" rel="nofollow" style="border-right: none!important;">Register</a></li>
+			{% endif %}
+			</ul>
+		</nav>
+		<!-- /Login menu + language dropdown -->
+		</div>
+		
+		<!-- Main navigation -->
+		<nav class="main">
+			<ul class="menu">
+				<li class="videos first selected" id="videosMenuTab">
+				<a href="{{ path('homepage') }}">Oeuvres<div class="menuArrow"></div></a>
+				<div class="menuDropdown rounded" style="width:170px;" id="videosMenuDropDown">
+				<span class="bubbleArrow" id="videosBubbleArrow"></span>
+					<div class="dropDownTransparency rounded" style="width:170px;height:195px;"></div>
+						<div class="dropDownBody rounded">
+						<ul>
+							<li  class="selected"><a href="">Nouvelles</a></li>
+							<li ><a href="">Recommandées</a></li>
+							<li ><a href="">Meilleur Classement</a></li>
+							<li ><a href="">Les Plus Consultées</a></li>
+							<li ><a href="" class="last">Most Favorited</a></li>
+						</ul>
+						</div>
+				</div>
+				</li>
+				<li class="categories">
+				<a href="">Catégories<div class="menuArrow"></div></a>
+				<div class="menuDropdown rounded" style="width:475px;margin-left:-31px; ">
+				<span class="bubbleArrow"></span>
+					<div class="dropDownTransparency rounded" style="width:475px;height:365px;"></div>
+					<div class="dropDownBody rounded" style="height:320px;padding: 15px 0 15px 24px;">
+						<div  style="font-size:0.95em;">
+						<ul>
+							<li><a href="">Sculpture</a></li>
+							<li><a href="">Dessin</a></li>
+							<li><a href="">Peinture</a></li>
+							<li><a href="">Photo</a></li>
+						</ul>
+						</div>
+					</div>
+				</div>
+				</li>
+				<li><a href="">Meilleur Classement</a></li>
+				<li><a href="">Les Plus Consultées</a></li>
+			</ul>
+		</nav>
+		<!-- /Main navigation -->
+	</div>
+
+	<div class="message-bar">
+		{% block message_bar %}
+		<a href="" target="_blank" title="follow cda on twitter">Follow CDA on Twitter</a>
+		{% endblock %}
+	</div>
+</header>
+			
+<div id="bodyContent">
+	{% block body %}{% endblock %}
+</div>
+		
+<footer id="footer" class="box-footer">
+	<div class="block_wrapper">
+		<div class="block nopadding footer-links" style="width:180px;">
+			<p>Certificat d'authenticité</p>
+			<ul>
+				<li><a href="" >Conditions générales d&#039;utilisation</a></li>
+				<li><a href="">Privacy Policy</a></li>
+				<li><a href="">Sitemap</a></li>
+			</ul>
+		</div>
+
+		<div class="block" style="width:180px;">
+			<p>Contact</p>
+			<ul>
+				<li><a href="" class="support">Contact</a></li>
+				<li><a href="" target="_blank">Content Partner Program</a></li>
+				<li><a href="" class="support">Advertise</a></li>
+				<li><a href="" target="_blank">Blog</a></li>
+			</ul>
+		</div>
+
+		<div class="block" style="width:160px;">
+			<p>Social</p>
+			<ul>
+				<li class="margin">
+					<div class="twitter">
+						<a href="http://twitter.com/cda" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false">Follow @certificatdauthenticite</a>
+						<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+					</div>
+				</li>
+				<li class="margin">
+					<div class="gplusone">
+						<g:plusone size="medium" count="false"></g:plusone>
+						<script type="text/javascript">
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+						</script>
+					</div>
+				</li>
+				<li class="cdaBlog"><a href="http://blog.certificatdauthenticite.fr/"></a></li>
+			</ul>
+		</div>
+
+		<div class="block last">
+			<p>More</p>
+			<ul>
+				<li><a href="http://mobile.certificatdauthenticite.fr">Certificat d'authenticité Mobile</a></li>
+			</ul>
+		</div>
+	</div>
+		
+	<div class="floor_wrapper">
+			<p style="font-size:1.1em;">certificatdauthenticite.fr 2012</p>
+	</div>
+</footer>
+		    
+	{% block javascripts %}
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  {% endblock %}
+</body>
+
+</html>

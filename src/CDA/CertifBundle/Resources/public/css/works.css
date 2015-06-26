@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+#content-box {
+    margin:10px auto;
+    padding:15px 20px;
+    width:934px;  min-height:384px;
+    border:1px solid #BBB;
+    background-color:#EEE;
+  }
+    #content-box .leftCol {
+      float:left;
+      width:428px
+    }
+    #content-box .rightCol {
+      float:right;
+      padding:0 8px;
+      width:480px;
+      border-left:1px solid #555;
+    }
+
+  .staticLayout h1 { margin-bottom:15px; }
+
+  .staticLayout p {
+    font-size:.8em;
+    margin-bottom:15px;
+  }
+  .staticLayout li {
+    font-size:0.8em;
+    margin-bottom:5px;
+  }
+  .staticLayout li li { /* Ugly fix for inheritance */
+    font-size:1em;
+  }
+
+  .wrapper_title_section {
+    width:960px;
+    margin: 20px 0 15px 4px;
+    padding: 10px 10px 0;
+    background: none repeat scroll 0 0 #fff;
+    }
+    .ie7 .wrapper_title_section,
+    .ie8 .wrapper_title_section,
+    .ie9 .wrapper_title_section { background-color: #fff; }
+
+    .ie7 .wrapper_title_section { width:950px; }
+
+  p.title  {
+    display:block;
+    margin: 3px 0;
+    width: 122px;height: 36px;
+    line-height: 1.0em;
+    overflow: hidden;
+  }
+  .ie7 p.title, .ie8 p.title { height: 34px; }
+
+    p.title a {
+      text-decoration: none;
+      font-size: 0.9em;
+      color: #F0B000; font-weight: bold;
+    }
+      p.title a:hover { color:#ffacc0; }
+
+    #content  h1.title {
+      font-weight: bold;
+      float:left;
+    }
+
+
+.work-entry-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; }
+form.work-entry { font-size: 16px; }
+form.work-entry div { clear: left; margin-bottom: 10px; }
+form.work-entry label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+form.work-entry input[type="text"],
+form.work-entry input[type="email"]
+    { width: 500px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.work-entry textarea { width: 500px; height: 150px; line-height: 26px; font-size: 20px; }
+form.work-entry input[type="submit"] { margin-left: 110px; width: 508px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.work-entry ul li { color: #ff0000; margin-bottom: 5px; }

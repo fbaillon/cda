@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+  Accueil
+{% endblock%}
+
+{% block body %}
+Bienvenue sur Certificat d'authenticité ! </br>
+</br>
+<h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
+<h3>Contacts</h3>
+<ul>
+{% for contact in artist.contacts %}
+    <li>
+    	{{ contact.type }} : {{ contact.text }}
+    </li>
+{% else %}
+    <li>Pas de contact</li>
+{% endfor %}
+</ul>
+{% endblock%}

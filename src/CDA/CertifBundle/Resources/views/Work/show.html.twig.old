@@ -1,0 +1,211 @@
+{% extends 'CDACertifBundle::layout.html.twig' %}
+
+{% block title %}
+	Oeuvre : {{ work.title }}
+{% endblock%}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cdacertif/css/work.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/cdacertif/css/thumbs.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+	<!-- Work Page-->
+	<div id="bgTitle">
+		<div id="bgWorkContainer">
+			<div class="borderTop"></div>
+			<div id="bgWorkTransparency"></div>
+			<div class="borderBottom"></div>
+		</div>
+	</div>
+	
+	<div id="content" class="watch">
+		<div id="workCanvas">
+			<h1 class="float-left workTitleArea">{{ work.title }}</h1>
+			<div class="column-left">
+				<div id="workContainer">
+					<img alt="{{ work.summary }}" src="{{ work.pictures["0"].path | apply_filter('work_picture') }}"></div>
+			</div>
+			<div class="column-right" style="margin-top:5px;">
+			</div>
+		</div>
+		
+		<div class="boxes float-left" style="margin-top:15px;">
+			<div class="columnL float-left">
+
+				<!-- Call-to-Actions -->
+				<ul class="cta">
+					<li id="thanksForVoting" class="hidden">
+						<div class="shareWrapper rounded fontCap fontSize1 thanksText">Thanks for voting!</div>
+					</li>
+					<li style="padding-right: 1px!important;" class="thumbsRating">
+						<div class="bubble-video-text bubble-thumbsup hidden"><div>I like this work</div></div>
+						<a class="thumbsUp bubble pointer" type="bubble-thumbsup" rel="5"><span>&nbsp;</span></a>
+					</li>
+					<li class="thumbsRating">
+						<div class="bubble-video-text bubble-thumbsdown hidden"><div>I dislike this work</div></div>
+						<a class="thumbsDown bubble pointer" type="bubble-thumbsdown" rel="1"><span>&nbsp;</span></a>
+					</li>
+					<li>
+						<div class="bubble-video-text bubble-fav hidden" style="left:-6px;"><div id="favStatusText">Add work to favorites</div></div>
+						<a class="favorites bubble rounded pointer" type="bubble-fav" id="btnSaveFavorite"><span>&nbsp;</span></a>
+					</li>
+					<li>
+						<div class="bubble-video-text bubble-comment hidden" style="left:-13px;"><div>Post<br />comment</div></div>
+						<a class="comment bubble rounded pointer" type="bubble-comment" id="scrollComment">Comment</a>
+					</li>
+					<li>
+						<div class="bubble-video-text bubble-download hidden" style="left:-22px;"><div>Download this picture</div></div>
+						<a class="download bubble rounded dPopup pointer" type="bubble-download">Download</a>
+					</li>
+				</ul>
+
+				<div class="clearfix"></div>
+
+				<!-- Share tools -->
+				<div class="shareWrapper sharePadding rounded wrapperWhite" style="width:528px;">
+					<div class="share">
+						<div class="share-tx fontCap float-left">Share:</div>
+
+						<div class="float-left" style="margin:4px 16px 0 0;"><div class="g-plusone" data-annotation="none"></div></div>
+
+						<script type="text/javascript">
+						  (function() {
+							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							po.src = 'https://apis.google.com/js/plusone.js';
+							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						  })();
+						</script>
+
+						<div class="float-left" style="margin-top:6px; width: 60px;">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+						<!-- General Informations -->
+			<div class="columnR float-left">
+				<ul class="spaced" style="margin-top: 17px;">
+					<li><b>Classement:</b> <span class="rating  up">87%</span> (1584 classements)</li>
+					<li><b>Vues:</b> 1,010,320</li>
+					<li><b>Date:</b> {{ work.createdAt | localizeddate('long', 'none')  }} </li>
+					<li><b>Dépôt:</b>  <a href="">Frédéric BAILLON</a> </li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="boxes float-left">
+
+			<!-- Category & Tag list left sidebar -->
+			<div class="float-left" style="width:140px">
+				<div class="shareWrapper rounded">
+						
+					<ul class="listCat">
+						<li><b>Catégories:<br /></b>
+							<a href="">Dessin</a><br />
+							<a href="">Sanguine</a><br />
+					</ul>
+						
+					<ul class="listCat">
+						<li><b>Tags:<br /></b>
+							<a href="">Portrait</a><br />
+							<a href="">Mouvement</a><br />
+					</ul>
+				</div>
+				<div id="categorize" class="catPopup rounded"><a>Categorize this work</a></div>
+			</div>
+
+			<!-- Right content -->
+			<div class="float-left" style="width:780px;">
+				<div class="folderContainer">
+
+					<!-- Menu -->
+					<nav class="folderTabs" id="commentTop">
+						<ul class="mainNav">
+							<li class="selected"><div class="shareWrapper_menu YP-pink rounded"><a>Ebauches</a></div></li>
+							<li id="tabReco"><div class="shareWrapper_menu YP-pink rounded"><a>Du même artiste</a></div></li>
+							<li id="tabComments"><div class="shareWrapper_menu YP-pink rounded"><a>Commentaires (1)</a></div></li>
+							<li id="tabHD"><div class="shareWrapper_menu YP-pink rounded"><a>Oeuvres similaires</a></div></li>
+							<li id="tabDescription"><div class="shareWrapper_menu YP-pink rounded"><a>Description</a></div></li>
+						</ul>
+					</nav>
+
+					<!-- Hidden Tabs (content) -->
+					<div class="folderContent">
+						<div id="tab-related" class="">
+
+							{% render "CDACertifBundle:Work:artistWorks" with {'artistId': work.artist.id} %}
+						
+							<div class="nav-related shareWrapper-pagination rounded float-left fontCap pointer YP-pink prev unClickable" >
+				        <div class="left" id="1"><span>&laquo;</span> Previous</div>
+    					</div>
+
+    					<div class="pageIndicator float-left fontCap">Page <span id="currentPage">1</span> of 5</div>
+
+					    <div class="nav-related shareWrapper-pagination rounded float-left fontCap pointer YP-pink next" style="margin-right:5px">
+        				<div class="right" id="2">Next <span>&raquo;</span></div>
+    					</div>
+						</div>
+						
+						<div id="tab-recommended" class="hidden" style="margin-top:-15px;"></div>
+
+						<div id="tab-comments" class="hidden">
+							<div class="clearfix"></div>
+							<!-- comments -->
+							<ul>
+								<li class="comment_form">
+									<div id="leave-comment-form">
+										<div class="shareWrapper rounded" style="margin: 0;">
+											<form action="#" name="comment-form" id="comment-form">
+											<textarea name="message" id="message" cols="40" rows="5" title="Leave a comment..."></textarea>
+											<input type="text" name="author" id="author" value="Post as..." title="Post as..." class="float-left" />
+											<input type="submit" value="Submit comment" id="btnPostComment" class="rounded float-right fontCap" />
+											</form>
+										</div>
+									</div>
+								</li>
+	
+								<li class="comment_number">1 commentaire</li>
+								<li class="comment">
+									<div data-commentid="1" class="spam-flag" title="Flag as Spam or Inappropriate"></div>
+									<p class="name">Chris</p>
+									<p class="message">Great job.</p>
+									<p class="date">July 9, 2012</p>
+								</li>
+							</ul>
+							<a id="commentAnchor" class="fontCap float-left" style="margin-top:20px;"><span>&nbsp;</span>Back to top</a>
+						</div>
+						
+						<div id="tab-thumbnails" class="hidden">
+							<ul>
+								<li><img src=""  /></li>
+								<li><img src=""  /></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						
+						<div id="tab-description" class="hidden" >
+							<ul>
+								<li>{{ work.description }}</li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		
+		<div id="footer">
+			PUBLICITÉ
+		</div>
+	</div>
+		
+	<div class="clearfix"></div>
+		
+{% endblock%}
